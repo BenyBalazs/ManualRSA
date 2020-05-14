@@ -19,9 +19,11 @@ public final class Fme {
         base = base.mod(modulus);
 
         while (exponent.compareTo(zero) > 0) {
+
             if (exponent.mod(two).equals(one)) {
                 result = (result.multiply(base)).mod(modulus);
             }
+
             exponent = exponent.shiftRight(1);
             base = (base.multiply(base)).mod(modulus);
         }

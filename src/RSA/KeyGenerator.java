@@ -21,7 +21,7 @@ public class KeyGenerator {
 
     public KeyGenerator(){
 
-        primeGenerator = new PrimeGenerator(128 ,1000);
+        primeGenerator = new PrimeGenerator(258 ,1000);
         p = primeGenerator.getProbablePrime();
         q = primeGenerator.getProbablePrime();
         n = p.multiply(q);
@@ -87,14 +87,11 @@ public class KeyGenerator {
             lastY = temp;
         }
 
-        BigInteger[] tmp = { lastX, lastY };
-
-        return tmp;
+        return new BigInteger[]{ lastX, lastY };
     }
 
     public BigInteger[] getPublicKey(){
-        BigInteger[] tmp = { n, e };
-        return tmp;
+        return new BigInteger[]{ n, e };
     }
 
     public BigInteger getPrivateKey(){

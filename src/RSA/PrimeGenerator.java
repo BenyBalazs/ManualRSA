@@ -60,7 +60,7 @@ public class PrimeGenerator {
 
             int i = 0;
             for (; i < s; i++) {
-                result = result.modPow(two,numberToTest);
+                result = modPower(result,two,numberToTest);
                 if (result.equals(one))
                     return false;
                 else if (result.equals(numberToTest.subtract(one))) {
